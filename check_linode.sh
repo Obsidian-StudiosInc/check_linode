@@ -17,7 +17,7 @@ print_help() {
 }
 
 print_version() {
-	echo ${VERSION}
+	echo "${VERSION}"
 }
 
 [[ -z $1 ]] && display_help && exit 3
