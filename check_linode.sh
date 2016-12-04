@@ -12,8 +12,6 @@
 
 VERSION="Version 0.1"
 
-EXIT_CODE=0;
-
 print_help() {
 	echo "Usage: $0 -k <api_key> -l <linode_id>"
 }
