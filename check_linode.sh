@@ -41,7 +41,7 @@ do
 			exit 0
 			;;
 		-v | --version)
-            		print_version $0 $VERSION
+            		print_version "${0}" "${VERSION}"
 		        exit 0
             		;;
 		--)
