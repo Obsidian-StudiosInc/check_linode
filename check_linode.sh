@@ -30,13 +30,19 @@ while :
 do
 	case "$1" in
 		-k | --api-key)
-			[[ -z ${2} ]] && echo "Linode API Key not specified aborting" && exit 3
-			API_KEY=${2}
+			if [[ -z ${2} ]]; then
+				echo "Linode API Key not specified aborting"
+				exit 3
+			fi
+			API_KEY="${2}"
 			shift 2
 			;;
 		-l | --linode-id)
-			[[ -z ${2} ]] && echo "Linode ID not specified aborting" && exit 3
-			LINODE_ID=${2}
+			if [[ -z ${2} ]]; then
+				echo "Linode ID not specified aborting"
+				exit 3
+			fi
+			LINODE_ID="${2}"
 			shift 2
 			;;
 		-h | --help)
