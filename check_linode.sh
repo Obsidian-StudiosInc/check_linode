@@ -67,7 +67,7 @@ RESPONSE=$(curl -s "https://api.linode.com/?api_key=${API_KEY}&api_action=linode
 # Check response
 [[ -z ${RESPONSE} ]] && echo "CRITICAL - Linode API unreachable" && exit 2
 
-STATUS=$(echo -e ${RESPONSE} | sed 's/.*"STATUS":\([0-9]*\),.*/\1/')
+STATUS="$(echo -e "${RESPONSE}" | sed 's/.*"STATUS":\([0-9]*\),.*/\1/')"
 
 # Check status
 [[ -z ${STATUS} ]] && echo "CRITICAL - Linode API invalid response" && exit 2
