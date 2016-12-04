@@ -20,7 +20,10 @@ print_version() {
 	echo "${VERSION}"
 }
 
-[[ -z $1 ]] && display_help && exit 3
+if [[ -z ${1} ]]; then
+	display_help
+	exit 3
+fi
 
 # Parse parameters
 while :
