@@ -68,18 +68,31 @@ do
 done
 
 # Check required variables
-[[ -z ${API_KEY} ]] && echo "Linode API Key not specified aborting" && exit 3
-[[ -z ${LINODE_ID} ]] && echo "Linode ID not specified aborting" && exit 3
+if [[ -z ${API_KEY} ]]; then
+	echo "Linode API Key not specified aborting"
+	exit 3
+fi
+
+if [[ -z ${LINODE_ID} ]]; then
+	echo "Linode ID not specified aborting"
+	exit 3
+fi
 
 RESPONSE=$(curl -s "https://api.linode.com/?api_key=${API_KEY}&api_action=linode.list&linodeid=${LINODE_ID}")
 
 # Check response
-[[ -z ${RESPONSE} ]] && echo "CRITICAL - Linode API unreachable" && exit 2
+if [[ -z ${RESPONSE} ]]; then
+	echo "CRITICAL - Linode API unreachable"
+	exit 2
+fi
 
 STATUS="$(echo -e "${RESPONSE}" | sed 's/.*"STATUS":\([0-9]*\),.*/\1/')"
 
 # Check status
-[[ -z ${STATUS} ]] && echo "CRITICAL - Linode API invalid response" && exit 2
+if [[ -z ${STATUS} ]]; then
+	echo "CRITICAL - Linode API invalid response"
+	exit 2
+fi
 
 # Handle status
 case ${STATUS} in
