@@ -1,6 +1,7 @@
 # check_linode.sh
-[![License](http://img.shields.io/badge/license-MIT-blue.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/check_linode/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/Obsidian-StudiosInc/check_linode.svg?branch=master)](https://travis-ci.org/Obsidian-StudiosInc/check_linode)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=plastic)](https://github.com/Obsidian-StudiosInc/check_linode/blob/master/LICENSE)
+[![Build Status](https://img.shields.io/travis/Obsidian-StudiosInc/check_linode/master.svg?style=plastic)](https://travis-ci.org/Obsidian-StudiosInc/check_linode)
+[![Build Status](https://img.shields.io/shippable/5840e5c204d5ee0f002033e7/master.svg?style=plastic)](https://app.shippable.com/projects/5840e5c204d5ee0f002033e7/)
 
 Nagios plugin to check the status of a Linode using the Linode API. 
 Basic bash script using curl to check the status and return output for 
